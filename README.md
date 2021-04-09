@@ -17,10 +17,10 @@ To add VM a category with category values please use following format
 
 ```vm-to-gategory.py -u user_with_admin_permissions_here -n vmname1,vmname2 -i 'PC_IP_or_FQDN_here' -c category_name_here -k category_values_here```
 
-Multiple VMs can be provided with "," as delimiter
+Multiple VMs can be provided with "," as delimiter.\n
 Category values can be supplied with "," as delimiter
 
-Script will check if category or values already present on Prism Central and create missing category and values.
+Script will check if category or values already present on Prism Central and create missing category and values.\n
 Script will check current VM category values and add/update new categiry and values.
 
 ## License
