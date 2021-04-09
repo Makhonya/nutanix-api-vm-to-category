@@ -76,14 +76,12 @@ if len(jsData['entities']) > 1:
     while selectedId not in menuIndx:
         selectedId = int(input('Confirm VM UUID '))
 
-print(jsData['entities'][selectedId])     
 vmUuid = jsData['entities'][selectedId]['metadata']['uuid']
-print(vmUuid)
 
 #Get VM spec from PC
 endpointVM = 'api/nutanix/v3/vms/'
 jsData2 = json.loads(apicall(apiBase+endpointVM+vmUuid, auth, None, 'GET').content)
-print(jsData2['spec']['name'],jsData2['metadata']['uuid'])
+print('Processing VM: \n',jsData2['spec']['name'],jsData2['metadata']['uuid'])
 
 
 #Check if category exists and create if not
@@ -144,4 +142,4 @@ else:
     currentVMcategories[categoryKey] = categoryValues
 
 jsData3 = json.loads(apicall(apiBase+endpointVM+vmUuid, auth, json.dumps(newpayload), 'PUT').content)
-print(jsData3)
+print('Task status: ',jsData3['status']['state'],'\n','Task uuid: ',jsData3['status']['execution_context']['task_uuid'])
