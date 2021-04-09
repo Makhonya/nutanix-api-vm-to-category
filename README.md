@@ -1,4 +1,4 @@
-# Import SSL Certificate for Prism Element/Prism Central.
+# Add new category and category values for VM.
 
 ## Introduction
 
