@@ -71,13 +71,13 @@ headers = {'Accept': 'application/json','content-type': 'application/json',}
 auth = HTTPBasicAuth(user, getpass.getpass('Enter password for user '))
 
 # Check if category exists and create if not
-endpointCategory = 'api/nutanix/v3/categories/'+categoryKey
+endpointCategory = 'api/nutanix/v3/categories/' + categoryKey
 categoryPayload = '''{
   "kind": "category"
 }'''
 categoryData = json.loads(apiCall(apiBase + endpointCategory + '/list', auth, categoryPayload, 'POST').content)
 
-if not categoryData['entities'] and categoryData['metadata']['length'] ==0:
+if not categoryData['entities'] and categoryData['metadata']['length'] == 0:
     print('Creating missing category Key and Values')
     categoryDefinitionPayload = '''{
     "api_version": "3.1.0",
@@ -153,7 +153,7 @@ for vmName in vmNames:
             for i in categoryValuesCompare(curVMCategories[categoryKey], categoryValues):
                 (curVMCategories[categoryKey]).append(i)
         else:
-            print('nothing to add')
+            print('Nothing to add')
             continue
     else:
         curVMCategories[categoryKey] = categoryValues
