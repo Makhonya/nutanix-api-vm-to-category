@@ -15,8 +15,9 @@ argparser
 
 To add VM a category with category values please use following format
 
-```vm-to-gategory.py -u user_with_admin_permissions_here -n vm_name_here -i 'PC_IP_or_FQDN_here' -c category_name_here -k category_values_here```
+```vm-to-gategory.py -u user_with_admin_permissions_here -n vmname1,vmname2 -i 'PC_IP_or_FQDN_here' -c category_name_here -k category_values_here```
 
+Multiple VMs can be provided with "," as delimiter
 Category values can be supplied with "," as delimiter
 
 Script will check if category or values already present on Prism Central and create missing category and values.
