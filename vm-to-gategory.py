@@ -7,9 +7,10 @@ import requests
 from requests.auth import HTTPBasicAuth
 from urllib3 import disable_warnings
 from urllib3.exceptions import InsecureRequestWarning
-
+#Self-signed certificate trust handling
 disable_warnings(InsecureRequestWarning)
 
+#Add handling for API reply errors
 def apicall(apiurl, apiauth, apipayload, method):
     try:
         if method == 'POST':
@@ -126,7 +127,6 @@ newpayload['spec'] = jsData2['spec']
 newpayload['metadata'] = jsData2['metadata']
 newpayload["api_version"] = jsData2['api_version']
 newpayload['metadata']["use_categories_mapping"] = True
-
 currentVMcategories = newpayload['metadata']['categories_mapping']
 
 #Modify/Add categories
