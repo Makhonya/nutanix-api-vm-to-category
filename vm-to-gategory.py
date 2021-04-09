@@ -71,6 +71,10 @@ listVMsPayload = '''{
 }''' % vmName
 jsData = json.loads(apiCall(apiBase + endpointVMs, auth, listVMsPayload, 'POST').content)
 
+if len(jsData['entities']) == 0:
+    print('no VMs found we name %s' % vmName )
+    quit()
+
 # If more than one VM found build menu to pick VM based on UUID
 menuEntries = list()
 menuIndx = list()
