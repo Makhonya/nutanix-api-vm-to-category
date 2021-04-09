@@ -51,6 +51,7 @@ def categoryValuesCompare(curValues, newValues):
 
 parser = argparse.ArgumentParser(description='''Script to add category and values to VM''', 
                                  usage='''new.py -u user_with_admin_permissions_here -n vmname_here -i 'PC_IP_or_FQDN_here' -c category_name_here -k category_values_here\n
+                                 List of VMs supported with \",\" as delimiter.
                                  Category values can be supplied with \",\" as delimiter''')
 parser.add_argument('-n', '--vmNames', type=str, help='Name of VM', required=True)
 parser.add_argument('-c', '--category',type=str, help='Category to add.', required=True)
